@@ -35,12 +35,15 @@ const headers = { 'Content-Type': 'application/json' };
 
 function demoReply(q) {
   const t = q.toLowerCase();
-  if (/(hour|open|close|time|when)/.test(t)) return "We're open Tuesday to Friday 9:00–19:00 and Saturday 9:00–15:00. We're closed on Sunday and Monday.";
-  if (/(haircut|cut|price|cost|how much)/.test(t)) return "A women's cut is €35 and a men's cut is €20. Children's cuts are €15. Would you like to book?";
-  if (/(manicure|nail|pedicure|gel)/.test(t)) return 'A classic manicure is €25, gel manicure €35 and pedicure €35.';
-  if (/(book|appointment|reserve)/.test(t)) return "Happy to help! Please send your name, the service you'd like, and your preferred day and time.";
-  if (/(where|address|parking|location)/.test(t)) return "We're at 12 Garden Street in the city centre, with free parking behind the building.";
   if (/(cancel)/.test(t)) return 'Please cancel at least 24 hours in advance. Late cancellations may be charged 50%.';
+  if (/(book|appointment|reserve)/.test(t)) return "Happy to help! Please send your name, the service you'd like, and your preferred day and time.";
+  if (/(manicure|nail|pedicure|gel)/.test(t)) return 'A classic manicure is €25, gel manicure €35 and pedicure €35. Would you like to book?';
+  if (/(brow|eyebrow)/.test(t)) return 'Eyebrow shaping is €12 and eyebrow tint is €10.';
+  if (/(colou?r|highlight|dye)/.test(t)) return 'Full colour starts from €60 and highlights from €75.';
+  if (/(where|address|parking|location)/.test(t)) return "We're at 12 Garden Street in the city centre, with free parking behind the building.";
+  if (/(hour|open|close|time|when)/.test(t)) return "We're open Tuesday to Friday 9:00–19:00 and Saturday 9:00–15:00. We're closed on Sunday and Monday.";
+  if (/(pay|card|cash)/.test(t)) return 'You can pay with cash or any major bank card. Gift cards are available too.';
+  if (/(haircut|cut|hair|price|cost|how much)/.test(t)) return "A women's cut is €35 and a men's cut is €20. Children's cuts are €15. Would you like to book?";
   return "I'm the demo assistant. Ask me about prices, opening hours or booking!";
 }
 
